@@ -1,3 +1,6 @@
+
+//Problem Link---------------------------->>>https://coderoj.com/c/stc-oyp/arena/problems/E
+
 #include<bits/stdc++.h>
 using namespace std;
 #define fast ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
