@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-void marge(int ar[],int l,int mid,int r)
+void merge(int ar[],int l,int mid,int r)
 {
     int temp[r-l+1],j=0;
     int leftst=l,lefted=mid,rightst=mid+1,righted=r;
@@ -14,14 +14,14 @@ void marge(int ar[],int l,int mid,int r)
     while(rightst<=righted)temp[j++]=ar[rightst++];
     for(int i=0;i<j;i++)ar[l++]=temp[i];
 }
-void margesort(int ar[],int l,int r)
+void mergesort(int ar[],int l,int r)
 {
     if(l<r)
     {
         int mid=(l+r)/2;
-        margesort(ar,l,mid);
-        margesort(ar,mid+1,r);
-        marge(ar,l,mid,r);
+        mergesort(ar,l,mid);
+        mergesort(ar,mid+1,r);
+        merge(ar,l,mid,r);
     }
 }
 int main()
@@ -33,7 +33,7 @@ int main()
         cin>>n;
         int ar[n];
         for(i=0; i<n; i++)cin>>ar[i];
-        margesort(ar,0,n-1);
+        mergesort(ar,0,n-1);
         for(i=0; i<n; i++)cout<<ar[i]<<" ";
         cout<<endl;
     }
